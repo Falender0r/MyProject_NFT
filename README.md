@@ -69,15 +69,15 @@ Web3 airdrop dashboard for P12 Genesis Soul-Bound Tokens (SBTs) with multi-walle
 
 | Landing Page | Connect Wallet |
 |--------------|----------------|
-| ![Landing Page](./public/screenshots/Screenshot%202026-05-16%20171822.png) | ![Connect Wallet](./public/screenshots/Screenshot%202026-05-16%20172408.png) |
+| ![Landing Page](./public/screenshots/landingpage.png) | ![Connect Wallet](./public/screenshots/ewallet.png) |
 
 | Assets Page | Editor Page |
 |-------------|-------------|
-| ![Assets](./public/screenshots/Screenshot%202026-05-16%20172313.png) | ![Editor](./public/screenshots/Screenshot%202026-05-16%20172328.png) |
+| ![Assets](./public/screenshots/assets.png) | ![Editor](./public/screenshots/editor.png) |
 
-| Partners | Community |
+| Partners | Vision |
 |----------|-----------|
-| ![Partners](./public/screenshots/Screenshot%202026-05-16%20172018.png) | ![Community](./public/screenshots/Screenshot%202026-05-16%20171849.png) |
+| ![Partners](./public/screenshots/partners.png) | ![Community](./public/screenshots/vision.png) |
 
 ---
 
