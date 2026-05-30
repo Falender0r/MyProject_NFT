@@ -13,12 +13,15 @@ module.exports = {
   },
   reactStrictMode: false,
   swcMinify: true,
-  // INI TAMBAHAN BIAR SKIP ESLINT & TYPESCRIPT
   eslint: {
     ignoreDuringBuilds: true,
   },
   typescript: {
     ignoreBuildErrors: true,
+  },
+  staticPageGenerationTimeout: 120,
+  generateBuildId: async () => {
+    return 'build-' + Date.now()
   },
   async headers() {
     return [
