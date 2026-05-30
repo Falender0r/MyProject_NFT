@@ -52,21 +52,24 @@ export default function Collab({ data }: { data: CollabInfoType }) {
   );
 }
 
+// ========== INI YANG DIUBAH: SKIP FETCH API SAAT BUILD ==========
 export async function getStaticPaths() {
-  if (process.env.NODE_ENV === 'development') {
-    return { paths: [], fallback: 'blocking' };
-  }
-  const { data } = await fetchCollabList();
-  return {
-    paths: data.slice(0, 4).map((item: CollabShortInfo) => ({ params: { id: item.collabCode } })),
-    fallback: 'blocking',
-  };
+  // Langsung return kosong, ga panggil API
+  return { paths: [], fallback: 'blocking' };
 }
 
 export async function getStaticProps({ params }: { params: { id: string } }) {
   const id = params.id;
   if (!/^[0-9A-Za-z]+$/.test(id)) return { notFound: true };
-  const { data } = await fetchCollabItem(id);
-  if (!data) return { notFound: true };
-  return { props: { data }, revalidate: 60 * 6 };
+  
+  // Coba fetch, kalau gagal return notFound
+  try {
+    const { data } = await fetchCollabItem(id);
+    if (!data) return { notFound: true };
+    return { props: { data }, revalidate: 60 * 6 };
+  } catch (error) {
+    // Kalau API error, return notFound biar build tetap jalan
+    console.error('Fetch failed for collab:', id, error);
+    return { notFound: true };
+  }
 }
