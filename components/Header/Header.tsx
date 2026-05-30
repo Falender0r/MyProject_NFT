@@ -11,7 +11,7 @@ const Header = () => {
     data: balance, 
     isLoading, 
     isError, 
-    error 
+    error: _error  // Tambahin underscore biar ga unused variable error
   } = useBalance({
     address: address,
   });
