@@ -170,3 +170,17 @@ export default function GamerProfile() {
     </div>
   );
 }
+
+// ========== INI TAMBAHAN BIAR BUILD SUKSES ==========
+export async function getStaticPaths() {
+  // Skip generate semua page saat build
+  return { paths: [], fallback: true };
+}
+
+export async function getStaticProps() {
+  // Return props kosong, ga fetch API apapun
+  return { 
+    props: {}, 
+    revalidate: 60 
+  };
+}
